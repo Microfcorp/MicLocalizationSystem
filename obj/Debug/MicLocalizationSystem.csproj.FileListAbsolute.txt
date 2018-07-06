@@ -1,0 +1,5 @@
+c:\users\лехап\documents\visual studio 2015\Projects\MicLocalizationSystem\MicLocalizationSystem\bin\Debug\MicLocalizationSystem.dll
+c:\users\лехап\documents\visual studio 2015\Projects\MicLocalizationSystem\MicLocalizationSystem\bin\Debug\MicLocalizationSystem.pdb
+c:\users\лехап\documents\visual studio 2015\Projects\MicLocalizationSystem\MicLocalizationSystem\obj\Debug\MicLocalizationSystem.csprojResolveAssemblyReference.cache
+c:\users\лехап\documents\visual studio 2015\Projects\MicLocalizationSystem\MicLocalizationSystem\obj\Debug\MicLocalizationSystem.dll
+c:\users\лехап\documents\visual studio 2015\Projects\MicLocalizationSystem\MicLocalizationSystem\obj\Debug\MicLocalizationSystem.pdb
