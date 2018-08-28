@@ -3,6 +3,7 @@ Language management system developed by Microf for its projects
 
 Description of library commands:
 ```C#
+using MicLocalizationSystem;
 Language lg = LocalizationSettings.GetLangSystem(); //To get the current system language
 Language lg = LocalizationSettings.GetLangName(name, Environment.CurrentDirectory + "\\Localization\\");//Get a localized file name
 
@@ -14,4 +15,14 @@ foreach (var item in lng)
 {
      Console.WriteLine(item.GetName()); //To obtain the name of the localized file     
 }
+```
+Online Translate:
+```C#
+using MicLocalizationSystem.Translate;
+Console.WriteLine(OnlineLocalization.GetOnline(Lang.(Language), string Text)); //Get a localized string with Internet connection
+```
+Including ConsoleGameEngine and 2 functions:
+```GAM
+LoadLangParamFromFile //and 2 parameters: NameLangFile and Path
+PrintLocalized //and 1 parameters: Name
 ```
