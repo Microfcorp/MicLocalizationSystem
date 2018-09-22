@@ -21,6 +21,15 @@ Online Translate:
 using MicLocalizationSystem.Translate;
 Console.WriteLine(OnlineLocalization.GetOnline(Lang.(Language), string Text)); //Get a localized string with Internet connection
 ```
+
+Automatic genaration localizations lines:
+```C#
+using MicLocalizationSystem.Form;
+using System.Windows.Forms;
+Console.WriteLine(FormLocalizations.WriteConsoleLNG(Control.ControlCollection Controls));
+Console.WriteLine(FormLocalizations.WriteConsoleCSharp(Control.ControlCollection Controls));
+```
+
 Including ConsoleGameEngine and 2 functions:
 ```GAM
 LoadLangParamFromFile //and 2 parameters: NameLangFile and Path
