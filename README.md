@@ -19,6 +19,7 @@ foreach (var item in lng)
 Online Translate:
 ```C#
 using MicLocalizationSystem.Translate;
+
 Console.WriteLine(OnlineLocalization.GetOnline(Lang.(Language), string Text)); //Get a localized string with Internet connection
 ```
 
@@ -26,6 +27,7 @@ Automatic genaration localizations lines:
 ```C#
 using MicLocalizationSystem.Form;
 using System.Windows.Forms;
+
 Console.WriteLine(FormLocalizations.WriteConsoleLNG(Control.ControlCollection Controls));
 Console.WriteLine(FormLocalizations.WriteConsoleCSharp(Control.ControlCollection Controls));
 ```
