@@ -6,6 +6,7 @@ using System.Text;
 using System.IO;
 using SystemModule;
 using System.Net;
+using System.Windows.Forms;
 
 namespace MicLocalizationSystem
 {
@@ -30,11 +31,11 @@ namespace MicLocalizationSystem
         public static LangParam LoadLangParamFromFile(Language Lang, string PathToFoldersLang)
         {
             LangParam tmp = new LangParam();
-            string file = File.ReadAllText(PathToFoldersLang + "\\" + Lang.langid + ".lng", Encoding.UTF8).Replace("\n","").Replace("\r", "");
+            string file = File.ReadAllText(PathToFoldersLang + "\\" + Lang.langid + ".lng", Encoding.UTF8);
 
             for (int i = 0; i < file.Split(';').Length - 1; i++)
             {
-                tmp.Text.Add(file.Split(';')[i].Split('=')[0], file.Split(';')[i].Split('=')[1]);
+                tmp.Text.Add(file.Split(';')[i].Split('=')[0].Replace(" ", "").Replace("\n", "").Replace("\r", ""), file.Split(';')[i].Split('=')[1]);
             }
             return tmp;
         }
@@ -115,6 +116,57 @@ namespace MicLocalizationSystem.Translate
                 count = sr.Read(read, 0, 256);
             }
             return Out;
+        }
+    }
+}
+
+namespace MicLocalizationSystem.Form
+{
+    public static class FormLocalizations
+    {
+        public static void WriteConsoleLNG(Control.ControlCollection Controls)
+        {
+            foreach (var item in Controls)
+            {
+                if (item is Label)
+                {
+                    Console.WriteLine("{0}={1};",((Label)item).Name, ((Label)item).Text);
+                }
+                else if (item is TextBox)
+                {
+                    Console.WriteLine("{0}={1};", ((TextBox)item).Name, ((TextBox)item).Text);
+                }
+                else if (item is ToolStripMenuItem)
+                {
+                    Console.WriteLine("{0}={1};", ((ToolStripMenuItem)item).Name, ((ToolStripMenuItem)item).Text);
+                }
+                else if (item is Button)
+                {
+                    Console.WriteLine("{0}={1};", ((Button)item).Name, ((Button)item).Text);
+                }
+            }
+        }
+        public static void WriteConsoleCSharp(Control.ControlCollection Controls)
+        {
+            foreach (var item in Controls)
+            {
+                if (item is Label)
+                {
+                    Console.WriteLine("this.{0}.Text = lng.GetLangText(\"{0}\");", ((Label)item).Name, ((Label)item).Text);
+                }
+                else if (item is TextBox)
+                {
+                    Console.WriteLine("this.{0}.Text = lng.GetLangText(\"{0}\");", ((TextBox)item).Name, ((TextBox)item).Text);
+                }
+                else if (item is ToolStripMenuItem)
+                {
+                    Console.WriteLine("this.{0}.Text = lng.GetLangText(\"{0}\");", ((ToolStripMenuItem)item).Name, ((ToolStripMenuItem)item).Text);
+                }
+                else if (item is Button)
+                {
+                    Console.WriteLine("this.{0}.Text = lng.GetLangText(\"{0}\");", ((Button)item).Name, ((Button)item).Text);
+                }
+            }
         }
     }
 }
