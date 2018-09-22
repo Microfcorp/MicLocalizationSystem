@@ -19,7 +19,6 @@ foreach (var item in lng)
 Online Translate:
 ```C#
 using MicLocalizationSystem.Translate;
-
 Console.WriteLine(OnlineLocalization.GetOnline(Lang.(Language), string Text)); //Get a localized string with Internet connection
 ```
 
